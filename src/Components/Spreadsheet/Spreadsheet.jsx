@@ -18,6 +18,7 @@ class Spreadsheet extends Component {
   render() {
     const headerCellIds = this.props.sheet.header.headerCellIds;
     const rowIds = this.props.sheet.rowIds;
+    console.log(this.props);
 
     return (
       <div className="spreadsheet">
