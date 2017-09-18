@@ -2,7 +2,7 @@ import data from '../seeds';
 
 export const SHEET_RETRIEVED = 'SHEET_RETRIEVED';
 
-export function fetchSheet(data) {
+export function fetchSheet() {
   return async (dispatch) => {
     const range = data.range;
     const majorDimension = data.majorDimension;

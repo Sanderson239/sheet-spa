@@ -1,11 +1,23 @@
-import configureStore from 'redux-mock-store';
+import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import nock from 'nock';
 import SHEET_RETRIEVED from '.';
-import * as actions from './index';
+import { fetchSheet } from './index';
 import data from '../seeds';
 
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+
 describe('actions', () => {
+  afterEach(() => {
+    nock.cleanAll();
+  });
+
   it('should create an action to fetch a sheet', () => {
+    nock('http://localhost:8000')
+      .get('/sheet/:id')
+      .reply(200, data);
+
     const range = 'Sheet1!A1:D5';
     const majorDimension = 'ROWS';
     const header = ['AcolumnName', 'BcolumnName', 'CcolumnName', 'DcolumnName', 'EcolumnName'];
@@ -17,14 +29,20 @@ describe('actions', () => {
     ];
 
 
-    const expectedAction = {
-      type: SHEET_RETRIEVED,
-      range,
-      majorDimension,
-      header,
-      rows,
-    };
+    const expectedActions = [
+      {
+        type: 'SHEET_RETRIEVED',
+        range,
+        majorDimension,
+        header,
+        rows,
+      },
+    ];
 
-    expect(actions.fetchSheet(data)().then(result => result)).toEqual(expectedAction);
+    const store = mockStore({ range: '', majorDimension: '', header: { headerCellIds: [], headerCellsById: {} }, rowIds: [], rowsById: {} });
+
+    return store.dispatch(fetchSheet()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 });
