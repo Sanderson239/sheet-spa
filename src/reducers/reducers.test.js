@@ -1,4 +1,4 @@
-import { Reducer } from 'redux-testkit';
+// import { Reducer } from 'redux-testkit';
 import SHEET_RETRIEVED from '../actions/index';
 import rootReducer from './index';
 
@@ -26,7 +26,7 @@ const newState = {
   },
 };
 
-describe('rootReducer', () => {
+describe('fetchSheet reducer', () => {
   it('should have initial state', () => {
     expect(rootReducer(initialState, {}))
       .toEqual({ sheet: {
@@ -50,14 +50,55 @@ describe('rootReducer', () => {
       ['A5', 'B5', 'C5', 'D5', 'E5'],
     ];
 
-    const action = {
-      type: SHEET_RETRIEVED,
-      range,
-      majorDimension,
-      header,
-      rows,
-    };
+    expect(
+      rootReducer(initialState, {
+        type: SHEET_RETRIEVED,
+        range,
+        majorDimension,
+        header,
+        rows,
+      }),
+    ).toEqual(
+      newState,
+    );
 
-    Reducer(rootReducer).withState(initialState).expect(action).toReturnState({ ...initialState });
+    expect(
+      rootReducer(
+
+        initialState,
+
+        {
+          type: SHEET_RETRIEVED,
+          range,
+          majorDimension,
+          header,
+          rows,
+        },
+      ),
+    ).toEqual([newState]);
+
+    // const action = {
+    //   range,
+    //   majorDimension,
+    //   header: { headerCellIds: header.map((value, idx) => idx + 1),
+    //     headerCellsById: header.reduce((result, value, idx) => {
+    //       const cells = result;
+    //       cells[idx + 1] = value;
+    //       return result;
+    //     }, {}) },
+    //   rowIds: rows.map((row, idx) => idx + 1),
+    //   rowsById: rows.reduce((result2, value, idx) => {
+    //     const cells = result2;
+    //     cells[idx + 1] = { cellIds: value.map((val, cellIdx) => cellIdx + 1),
+    //       cellsById: value.reduce((result3, cellValue, cellIdx) => {
+    //         const cellResult = result3;
+    //         cellResult[cellIdx + 1] = cellValue;
+    //         return result3;
+    //       }, {}) };
+    //     return result2;
+    //   }, {}),
+    // };
+
+    // Reducer(rootReducer).withState(initialState).expect(action).toReturnState(newState);
   });
 });
