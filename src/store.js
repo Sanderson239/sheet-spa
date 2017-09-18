@@ -5,10 +5,17 @@ import SHEET_API from './utils/Api';
 
 /* eslint-disable no-underscore-dangle */
 
+// const store = createStore(
+//   rootReducer,
+//   applyMiddleware(thunkMiddleware.withExtraArgument({ SHEET_API })),
+// );
+
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunkMiddleware.withExtraArgument({ SHEET_API })),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(
+    thunkMiddleware.withExtraArgument({ SHEET_API }),
+  ),
 );
-
 
 export default store;
