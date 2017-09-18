@@ -1,7 +1,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import SHEET_RETRIEVED from '.';
 import { fetchSheet } from './index';
 import data from '../seeds';
 
