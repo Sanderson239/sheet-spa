@@ -1,4 +1,3 @@
-// import { Reducer } from 'redux-testkit';
 import { SHEET_RETRIEVED } from '../actions/index';
 import rootReducer from './index';
 
