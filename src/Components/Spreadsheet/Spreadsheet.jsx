@@ -8,7 +8,7 @@ import HeaderCell from '../HeaderCell/HeaderCell';
 import Row from '../Row/Row';
 
 
-class Spreadsheet extends Component {
+export class Spreadsheet extends Component {
   componentDidMount() {
     this.props.fetchSheet();
   }
@@ -18,7 +18,6 @@ class Spreadsheet extends Component {
   render() {
     const headerCellIds = this.props.sheet.header.headerCellIds;
     const rowIds = this.props.sheet.rowIds;
-    console.log(this.props);
 
     return (
       <div className="spreadsheet">
@@ -39,7 +38,7 @@ class Spreadsheet extends Component {
 
 Spreadsheet.propTypes = {
   fetchSheet: PropTypes.func.isRequired,
-  sheet: PropTypes.shape({ range: '', majorDimension: '', header: { headerCellIds: [], headerCellsById: {} }, rowIds: [], rowsById: {} }).isRequired,
+  sheet: PropTypes.shape({ range: PropTypes.string, majorDimension: PropTypes.string, header: PropTypes.shape({ headerCellIds: PropTypes.array, headerCellsById: PropTypes.shape({}) }), rowIds: PropTypes.array, rowsById: PropTypes.shape({ cellIds: PropTypes.array, cellsById: PropTypes.shape({}) }) }).isRequired,
 };
 
 const mapStateToProps = (state) => {
@@ -49,7 +48,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({
+export const mapDispatchToProps = dispatch => bindActionCreators({
   fetchSheet,
 }, dispatch);
 

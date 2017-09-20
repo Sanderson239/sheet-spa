@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spreadsheet should render a Spreadsheet with range, majorDimension, header, rowIds, and rowsById 1`] = `
+<div
+  className="spreadsheet"
+>
+  <Table
+    as="table"
+    celled={true}
+    definition={true}
+    striped={true}
+  >
+    <TableHeader
+      as="thead"
+    >
+      <TableRow
+        as="tr"
+        cellAs="td"
+      >
+        <Connect(Component)
+          headerCellId={1}
+          key="1"
+        />
+        <Connect(Component)
+          headerCellId={2}
+          key="2"
+        />
+        <Connect(Component)
+          headerCellId={3}
+          key="3"
+        />
+        <Connect(Component)
+          headerCellId={4}
+          key="4"
+        />
+        <Connect(Component)
+          headerCellId={5}
+          key="5"
+        />
+      </TableRow>
+    </TableHeader>
+    <TableBody
+      as="tbody"
+    >
+      <Connect(Component)
+        key="1"
+        rowId={1}
+      />
+      <Connect(Component)
+        key="2"
+        rowId={2}
+      />
+      <Connect(Component)
+        key="3"
+        rowId={3}
+      />
+      <Connect(Component)
+        key="4"
+        rowId={4}
+      />
+    </TableBody>
+  </Table>
+</div>
+`;
