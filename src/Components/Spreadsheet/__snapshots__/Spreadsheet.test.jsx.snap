@@ -7,7 +7,6 @@ exports[`Spreadsheet should render a Spreadsheet with range, majorDimension, hea
   <Table
     as="table"
     celled={true}
-    definition={true}
     striped={true}
   >
     <TableHeader
@@ -17,23 +16,23 @@ exports[`Spreadsheet should render a Spreadsheet with range, majorDimension, hea
         as="tr"
         cellAs="td"
       >
-        <Connect(Component)
+        <Wrapper
           headerCellId={1}
           key="1"
         />
-        <Connect(Component)
+        <Wrapper
           headerCellId={2}
           key="2"
         />
-        <Connect(Component)
+        <Wrapper
           headerCellId={3}
           key="3"
         />
-        <Connect(Component)
+        <Wrapper
           headerCellId={4}
           key="4"
         />
-        <Connect(Component)
+        <Wrapper
           headerCellId={5}
           key="5"
         />
