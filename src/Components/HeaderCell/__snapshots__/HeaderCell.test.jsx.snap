@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spreadsheet HeaderCell should render a HeaderCell with headerCellId and headerCellsById 1`] = `
+<TableHeaderCell
+  as="th"
+>
+  AcolumnName
+</TableHeaderCell>
+`;

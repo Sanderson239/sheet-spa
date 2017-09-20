@@ -4,14 +4,14 @@ import { Table } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 
-const HeaderCell = ({ headerCellId, headerCellsById }) => (
+export const HeaderCell = ({ headerCellId, headerCellsById }) => (
   <Table.HeaderCell>{`${headerCellsById[headerCellId]}`}</Table.HeaderCell>
 );
 
 
 HeaderCell.propTypes = {
   headerCellId: PropTypes.number.isRequired,
-  headerCellsById: PropTypes.shape({ 1: 'Header A' }).isRequired,
+  headerCellsById: PropTypes.shape({ 1: PropTypes.string }).isRequired,
 };
 
 const mapStateToProps = (state) => {
