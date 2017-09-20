@@ -4,7 +4,7 @@ import { Table } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import Cell from '../Cell/Cell';
 
-const Row = props => (
+export const Row = props => (
   <Table.Row>
     { props.rowsById[`${props.rowId}`].cellIds.map(cellId => <Cell key={cellId} cellId={cellId} rowId={props.rowId} />) }
   </Table.Row>
@@ -13,7 +13,7 @@ const Row = props => (
 
 Row.propTypes = {
   rowId: PropTypes.number.isRequired,
-  rowsById: PropTypes.shape({ cellIds: [], cellsById: {} }).isRequired,
+  rowsById: PropTypes.shape({ cellIds: PropTypes.array, cellsById: PropTypes.shape({}) }).isRequired,
 };
 
 const mapStateToProps = (state) => {

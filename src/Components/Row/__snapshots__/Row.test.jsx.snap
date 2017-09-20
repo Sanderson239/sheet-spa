@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spreadsheet Row should render a Row with rowId and rowsById 1`] = `
+<TableRow
+  as="tr"
+  cellAs="td"
+>
+  <Connect(Component)
+    cellId={1}
+    key="1"
+    rowId={1}
+  />
+  <Connect(Component)
+    cellId={2}
+    key="2"
+    rowId={1}
+  />
+  <Connect(Component)
+    cellId={3}
+    key="3"
+    rowId={1}
+  />
+  <Connect(Component)
+    cellId={4}
+    key="4"
+    rowId={1}
+  />
+  <Connect(Component)
+    cellId={5}
+    key="5"
+    rowId={1}
+  />
+</TableRow>
+`;
