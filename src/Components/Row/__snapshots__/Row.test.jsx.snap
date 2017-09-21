@@ -5,27 +5,27 @@ exports[`Spreadsheet Row should render a Row with rowId and rowsById 1`] = `
   as="tr"
   cellAs="td"
 >
-  <Wrapper
+  <Component
     cellId={1}
     key="1"
     rowId={1}
   />
-  <Wrapper
+  <Component
     cellId={2}
     key="2"
     rowId={1}
   />
-  <Wrapper
+  <Component
     cellId={3}
     key="3"
     rowId={1}
   />
-  <Wrapper
+  <Component
     cellId={4}
     key="4"
     rowId={1}
   />
-  <Wrapper
+  <Component
     cellId={5}
     key="5"
     rowId={1}

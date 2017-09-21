@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import Cell from '../Cell/Cell';
+import { Cell } from '../Cell/Cell';
 
 export const Row = props => (
   <Table.Row>
@@ -10,6 +10,7 @@ export const Row = props => (
   </Table.Row>
 );
 
+/* eslint-disable max-len */
 
 Row.propTypes = {
   rowId: PropTypes.number.isRequired,

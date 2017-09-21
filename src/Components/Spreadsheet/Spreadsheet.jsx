@@ -4,8 +4,8 @@ import { Table } from 'semantic-ui-react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchSheet } from '../../actions';
-import HeaderCell from '../HeaderCell/HeaderCell';
-import Row from '../Row/Row';
+import { HeaderCell } from '../HeaderCell/HeaderCell';
+import { Row } from '../Row/Row';
 import injectWidgetId from '../../utils/utils';
 
 

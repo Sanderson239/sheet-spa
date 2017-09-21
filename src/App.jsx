@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Segment, Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import Spreadsheet from './components/Spreadsheet/Spreadsheet';
+import { Spreadsheet } from './Components/Spreadsheet/Spreadsheet';
 
 class App extends Component {
   getChildContext() {

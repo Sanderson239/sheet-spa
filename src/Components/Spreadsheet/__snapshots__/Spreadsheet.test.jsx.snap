@@ -16,23 +16,23 @@ exports[`Spreadsheet should render a Spreadsheet with range, majorDimension, hea
         as="tr"
         cellAs="td"
       >
-        <Wrapper
+        <Component
           headerCellId={1}
           key="1"
         />
-        <Wrapper
+        <Component
           headerCellId={2}
           key="2"
         />
-        <Wrapper
+        <Component
           headerCellId={3}
           key="3"
         />
-        <Wrapper
+        <Component
           headerCellId={4}
           key="4"
         />
-        <Wrapper
+        <Component
           headerCellId={5}
           key="5"
         />
@@ -41,19 +41,19 @@ exports[`Spreadsheet should render a Spreadsheet with range, majorDimension, hea
     <TableBody
       as="tbody"
     >
-      <Connect(Component)
+      <Component
         key="1"
         rowId={1}
       />
-      <Connect(Component)
+      <Component
         key="2"
         rowId={2}
       />
-      <Connect(Component)
+      <Component
         key="3"
         rowId={3}
       />
-      <Connect(Component)
+      <Component
         key="4"
         rowId={4}
       />
